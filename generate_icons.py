@@ -80,10 +80,10 @@ def generate_component_metadata(path, icons):
 def generate(interpolated_components, dest):
     def generate_component(component):
         componentName = component.get("componentName")
-        innerValue = component.get("innerValue")
+        inner = component.get("inner")
         fileName = component.get("fileName")
         with open(dest + fileName, "w") as f:
-            s = COMPONENT_TEMPLATE.format(componentName, innerValue)
+            s = COMPONENT_TEMPLATE.format(componentName, inner)
             f.write(s)
 
 
